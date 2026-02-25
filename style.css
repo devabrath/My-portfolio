@@ -408,12 +408,12 @@ section .button button:hover {
 }
 
 .skills-details .boxes .per {
-  font-size: 60px;
+  font-size: 30px;
   color: #A020F0;
 }
 
 .skills-details .text .per {
-  font-size: 60px;
+  font-size: 30px;
   color: #A020F0;
 }
 
@@ -468,7 +468,7 @@ section .button button:hover {
   transition: all 0.4s ease;
 }
 
-.B{
+.B {
   border-radius: 35px;
 }
 
@@ -515,9 +515,10 @@ footer .text span a {
 footer .text span a:hover {
   text-decoration: underline;
 }
-.contact .content .text .media-icons {
+
+/* .contact .content .text .media-icons {
   display: none;
-}
+} */
 
 /* Scroll TO Top Button CSS */
 .scroll-button a {
@@ -546,7 +547,7 @@ footer .text span a:hover {
 
   .contact .content .text .media-icons {
     display: none;
-    
+
   }
 }
 
@@ -578,7 +579,7 @@ footer .text span a:hover {
 
   .contact .content .text .media-icons {
     display: none;
-   }
+  }
 }
 
 @media (max-width: 900px) {
@@ -702,10 +703,11 @@ footer .text span a:hover {
     background: none;
   }
 
-  .skills-details .boxes .per {
+  /* .skills-details .boxes .per {
     font-size: 50px;
     color: #A020F0;
-  }
+  } */
+
 
   .contact .content .text .media-icons {
     justify-self: center;
@@ -717,4 +719,61 @@ footer .text span a:hover {
     margin-right: 9%;
     font-size: 35px;
   }
+}
+
+/* ===== Scroll Animation Base ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Different directions */
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-80px);
+  transition: all 0.8s ease;
+}
+
+.reveal-left.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(80px);
+  transition: all 0.8s ease;
+}
+
+.reveal-right.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Zoom animation */
+.reveal-zoom {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.7s ease;
+}
+
+.reveal-zoom.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Fade only */
+.reveal-fade {
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+.reveal-fade.active {
+  opacity: 1;
 }
