@@ -1,111 +1,109 @@
-
 const nav = document.querySelector("nav");
-const scrollBtn = document.querySelector(".scroll-button a");
-const sections = document.querySelectorAll("section");
-
-const body = document.body;
-const navBar = document.querySelector(".navbar");
+const menu = document.querySelector(".menu");
 const menuBtn = document.querySelector(".menu-btn");
-const cancelBtn = document.querySelector(".cancel-btn");
+const navLinks = document.querySelectorAll(".nav-link");
+const scrollButton = document.querySelector(".scroll-button");
+const scrollProgress = document.querySelector(".scroll-progress");
+const themeButtons = document.querySelectorAll(".theme-toggle");
+const sections = document.querySelectorAll("main section");
+const revealElements = document.querySelectorAll(".reveal, .reveal-left, .reveal-right, .reveal-zoom");
 
-const revealElements = document.querySelectorAll(
-  ".reveal, .reveal-left, .reveal-right, .reveal-zoom, .reveal-fade"
-);
+document.getElementById("year").textContent = new Date().getFullYear();
 
-let currentSection = 0;
-let isScrolling = false;
+/* Theme */
+const updateThemeIcons = () => {
+  const icon = document.body.classList.contains("dark-mode")
+    ? "fa-solid fa-sun"
+    : "fa-solid fa-moon";
 
-
-function updateCurrentSection() {
-  let scrollPos = window.scrollY;
-
-  sections.forEach((section, index) => {
-    if (
-      scrollPos >= section.offsetTop - 100 &&
-      scrollPos < section.offsetTop + section.offsetHeight - 100
-    ) {
-      currentSection = index;
-    }
+  themeButtons.forEach(button => {
+    button.querySelector("i").className = icon;
   });
-}
-
-
-function resetReveal() {
-  revealElements.forEach((el) => {
-    el.classList.remove("active");
-  });
-}
-
-
-function revealOnScroll() {
-  revealElements.forEach((el) => {
-    const windowHeight = window.innerHeight;
-    const elementTop = el.getBoundingClientRect().top;
-    const revealPoint = 100;
-
-    if (elementTop < windowHeight - revealPoint) {
-      el.classList.add("active");
-    } else {
-      el.classList.remove("active");
-    }
-  });
-}
-
-
-window.addEventListener("scroll", () => {
-  nav.classList.toggle("sticky", document.documentElement.scrollTop > 20);
-  scrollBtn.style.display =
-    document.documentElement.scrollTop > 20 ? "block" : "none";
-
-  updateCurrentSection();
-  revealOnScroll();
-
-  // Reseting when reaching TOP
-  if (window.scrollY === 0) {
-    resetReveal();
-  }
-
-  //Reset when reaching BOTTOM
-  if (
-    window.innerHeight + window.scrollY >=
-    document.body.offsetHeight - 2
-  ) {
-    resetReveal();
-  }
-});
-
-// section snp scrl
-window.addEventListener("wheel", (e) => {
-  if (isScrolling) return;
-
-  updateCurrentSection();
-
-  isScrolling = true;
-
-  if (e.deltaY > 0) {
-    currentSection++;
-  } else {
-    currentSection--;
-  }
-
-  currentSection = Math.max(0, Math.min(currentSection, sections.length - 1));
-
-  sections[currentSection].scrollIntoView({
-    behavior: "smooth",
-  });
-
-  setTimeout(() => {
-    isScrolling = false;
-  }, 700);
-});
-
-// mobile menu 
-menuBtn.onclick = () => {
-  navBar.classList.add("active");
-  body.style.overflow = "hidden";
 };
 
-cancelBtn.onclick = () => {
-  navBar.classList.remove("active");
-  body.style.overflow = "auto";
+const savedTheme = localStorage.getItem("theme");
+
+if (savedTheme !== "light") {
+  document.body.classList.add("dark-mode");
+}
+
+updateThemeIcons();
+
+themeButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+
+    localStorage.setItem(
+      "theme",
+      document.body.classList.contains("dark-mode") ? "dark" : "light"
+    );
+
+    updateThemeIcons();
+  });
+});
+
+/* Mobile menu */
+const closeMenu = () => {
+  menu.classList.remove("active");
+  document.body.classList.remove("menu-open");
+  menuBtn.querySelector("i").className = "fa-solid fa-bars";
 };
+
+menuBtn.addEventListener("click", () => {
+  const isOpen = menu.classList.toggle("active");
+  document.body.classList.toggle("menu-open", isOpen);
+
+  menuBtn.querySelector("i").className = isOpen
+    ? "fa-solid fa-xmark"
+    : "fa-solid fa-bars";
+});
+
+navLinks.forEach(link => link.addEventListener("click", closeMenu));
+
+/* Scroll reveal */
+const revealObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+
+    entry.target.classList.add("active");
+    revealObserver.unobserve(entry.target);
+  });
+}, { threshold: 0.12 });
+
+revealElements.forEach(element => revealObserver.observe(element));
+
+/* Active navigation */
+const sectionObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+
+    navLinks.forEach(link => link.classList.remove("active"));
+
+    document
+      .querySelector(`.nav-link[href="#${entry.target.id}"]`)
+      ?.classList.add("active");
+  });
+}, { rootMargin: "-35% 0px -55% 0px" });
+
+sections.forEach(section => sectionObserver.observe(section));
+
+/* Scroll */
+const handleScroll = () => {
+  const scrollTop = window.scrollY;
+
+  nav.classList.toggle("sticky", scrollTop > 30);
+  scrollButton.classList.toggle("show", scrollTop > 500);
+
+  const scrollHeight =
+    document.documentElement.scrollHeight - window.innerHeight;
+
+  scrollProgress.style.width =
+    `${scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0}%`;
+};
+
+window.addEventListener("scroll", handleScroll, { passive: true });
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 800) closeMenu();
+});
+
+handleScroll();

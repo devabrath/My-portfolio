@@ -1,286 +1,384 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-
+<html lang="en">
 <head>
+  <!-- For SEO  -->
   <meta charset="UTF-8">
-  <meta name="description" content="Devabrath Sahu - Full Stack Java Developer skilled in Spring Boot, React, MySQL, and Android Development. View my projects and portfolio.">
-  <meta name="author" content="Devabrath Sahu">
-  <meta name="keywords" content="Devabrath Sahu, Devabrath Full Stack Java Developer, Devabrath Sahu Bharath University, Devabrath Sahu Avasoft, Devabrath Sahu @ avasoft, Devabrath Bharath linkedin">
-  <title> Devabrath | Portfolio </title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="shortcut icon" href="Images/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <meta property="og:title" content="Devabrath | Full Stack Java Developer">
-<meta property="og:description" content="Portfolio of Devabrath Sahu - Java Full Stack Developer with Spring Boot, React, MySQL skills.">
-<meta property="og:image" content="Images/about.jpg">
-<meta property="og:url" content="https://www.linkedin.com/in/devabrathsahu/">
-<meta property="og:type" content="website">
+  <meta name="description" content="Devabrath Sahu - Full Stack Java Developer skilled in Java, Spring Boot, 
+  React, MySQL, and Android Development.">
+  <meta name="author" content="Devabrath Sahu">
+  <meta name="keywords" content="Devabrath Sahu, Full Stack Java Developer, 
+  Java Developer, Spring Boot, React, MySQL, Android Developer">
+  <meta name="theme-color" content="#7c3aed">
+
+  <!-- Page Title  -->
+  <title>Devabrath Sahu Portfolio | Full Stack Java Developer</title> 
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="Images/software-developer.ico" type="image/x-icon">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+  <meta property="og:title" content="Devabrath Sahu | Full Stack Java Developer">
+  <meta property="og:description" content="Portfolio of Devabrath Sahu - Java Full Stack Developer with Java, Spring Boot, React and MySQL skills.">
+  <meta property="og:image" content="Images/about.jpg">
+  <meta property="og:type" content="website">
 </head>
 
 <body>
-  <!-- Move to up button -->
-  <div class="scroll-button">
-    <a href="#home"><i class="fas fa-arrow-up"></i></a>
-  </div>
-  <!-- nav menu -->
-  <nav>
+  <div class="background-blur blur-one"></div>
+  <div class="background-blur blur-two"></div>
+  <div class="scroll-progress"></div>
+
+  <a href="#home" class="scroll-button" aria-label="Scroll to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </a>
+
+  <!-- Navigation -->
+  <nav id="navbar">
     <div class="navbar">
-      <div class="logo"><a href="#"></div>
+      <a href="#home" class="logo">Dev<span>.</span></a>
+
       <ul class="menu">
-        <li><a href="#home" class="active">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#project">Project</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <div class="cancel-btn">
-          <i class="fas fa-times"></i>
-        </div>
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#project" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li class="mobile-theme">
+          <button class="theme-toggle mobile-toggle" aria-label="Toggle dark mode">
+            <i class="fa-solid fa-moon"></i>
+          </button>
+        </li>
       </ul>
-    </div>
-    <div class="menu-btn">
-      <i class="fas fa-bars"></i>
+
+      <div class="nav-actions">
+        <button class="theme-toggle desktop-toggle" aria-label="Toggle dark mode">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <button class="menu-btn" aria-label="Open menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
     </div>
   </nav>
 
-  <!-- Home Section -->
-  <section class="home" id="home">
-    <div class="home-content">
-      <div class="text">
-        <div class="text-one">Hello <span class="wave">👋</span>,</div>
-        <div class="text-two">I'm Devabrath<br>Sahu</div>
-        <div class="text-three">Full Stack Java Developer</div>
-      </div>
-      <div class="button">
-        <a href="Pdf/Devabrath_resume_updated.pdf" download="Devabrath_sahu_resume.pdf"><button>Download
-            Resume</button></a>
-      </div>
+  <main>
 
-    </div>
-  </section>
+    <!-- Home -->
+    <section class="home section" id="home">
+      <div class="home-content">
+        <div class="profile-text reveal">
+          <div class="availability">
+            <span class="status-dot"></span>
+            Open to opportunities
+          </div>
 
-  <!-- About Section  -->
-  <section class="about" id="about">
-    <div class="content">
-      <div class="title"><span>About Me</span></div>
-      <div class="about-details">
-        <div class="left reveal-left">
-          <img src="images/about.jpg" alt="">
+          <p class="greeting">Hello, I'm</p>
+
+          <h1>Devabrath<br><span>Sahu.</span></h1>
+
+          <h2>Full Stack <span>Java Developer</span></h2>
+
+          <p class="profile-description">
+            I build scalable backend systems and modern web applications using Java, Spring Boot, React, and MySQL.
+          </p>
+
+          <div class="profile-buttons">
+            <a href="#project" class="btn btn-primary">
+              View My Work <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <a href="Pdf/Devabrath_resume_updated.pdf" download="Devabrath_Sahu_Resume.pdf" class="btn btn-secondary">
+              <i class="fa-solid fa-download"></i> Resume
+            </a>
+          </div>
+
+          <div class="profile-socials">
+            <a href="https://github.com/devabrath" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/devabrathsahu/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="mailto:devabrathsahu7032@gmail.com" aria-label="Email">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+          </div>
         </div>
-        <div class="right reveal-right">
-          <div class="topic">I'm a Full Stack Java Developer.</div>
-          <p>
-            Hello! My name is Devabrath Sahu, and I am a Computer Science and Engineering graduate with a strong focus
-            on Android Development and Full Stack Development. I have hands-on experience building scalable applications
-            using Java, Python, JavaScript, and Spring Boot, with a solid foundation in Data Structures, RESTful APIs,
-            and database management systems such as MySQL.</br></br>
-            I am passionate about designing intuitive user interfaces and developing efficient Android applications that
-            solve real-world problems. With a good understanding of the Software Development Life Cycle (SDLC), I enjoy
-            building end-to-end solutions by integrating Spring Boot backend services with responsive frontend
-            interfaces.</br></br>
 
-            I am eager to learn new technologies, solve challenging technical problems, and contribute to innovative
-            teams where I can create impactful digital products and grow as a software engineer.</p>
-          <div class="button">
-            <a href="#contact"><button>Contact Me</button></a>
+        <div class="profile-visual reveal-right">
+          <div class="profile-orbit orbit-one"></div>
+          <div class="profile-orbit orbit-two"></div>
+
+          <div class="profile-image-wrapper">
+            <img src="Images/about.jpg" alt="Devabrath Sahu">
+          </div>
+
+          <div class="floating-card card-java">
+            <i class="fa-brands fa-java"></i><span>Java</span>
+          </div>
+
+          <div class="floating-card card-code">
+            <i class="fa-solid fa-code"></i><span>Full Stack</span>
+          </div>
+
+          <div class="floating-card card-database">
+            <i class="fa-solid fa-database"></i><span>MySQL</span>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- My Skill Section -->
-  <section class="skills" id="skills">
-    <div class="content">
-      <div class="title reveal-fade"><span>My Skills</span></div>
-      <div class="skills-details">
-
-        <!-- Ls -->
-        <div class="boxes reveal-zoom">
-          <div class="box">
-            <div class="topic">Java</div>
-            <div class="per">
-              <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg"
-                width="40" />
-            </div>
-          </div>
-
-          <div class="box">
-            <div class="topic">HTML</div>
-            <div class="per">
-              <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg"
-                width="40" />
-            </div>
-          </div>
-
-          <div class="box">
-            <div class="topic">CSS</div>
-            <div class="per">
-              <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg"
-                width="40" />
-            </div>
-          </div>
-
-          <div class="box">
-            <div class="topic">JavaScript</div>
-            <div class="per">
-              <img
-                src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg"
-                width="40" />
-            </div>
-          </div>
+    <!-- About -->
+    <section class="about section" id="about">
+      <div class="content">
+        <div class="section-heading reveal">
+          <p class="section-label">ABOUT ME</p>
+          <h2>Turning ideas into <span>working products.</span></h2>
         </div>
 
-        <!-- RS-->
-        <div class="boxes reveal-zoom">
-
-          <div class="box">
-            <div class="topic">React JS</div>
-            <div class="per">
-              <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg"
-                width="40" />
-            </div>
+        <div class="about-details">
+          <div class="about-image-container reveal-left">
+            <div class="about-image-border"></div>
+            <img src="Images/about.jpg" alt="Devabrath Sahu">
           </div>
 
-          <div class="box">
-            <div class="topic">MySQL</div>
-            <div class="per">
-              <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg"
-                width="40" />
+          <div class="about-content reveal-right">
+            <p>Hello! I'm <strong>Devabrath Sahu</strong>, a Computer Science and Engineering graduate passionate about building reliable, scalable, and user-friendly software.</p>
+
+            <p>My primary focus is Java Full Stack Development. I enjoy building end-to-end applications by combining powerful backend services with modern and responsive user interfaces.</p>
+
+            <p>I work with technologies including Java, Spring Boot, React, JavaScript, MySQL, REST APIs, Git, and Android development. I also enjoy solving challenging problems and continuously improving my engineering skills.</p>
+
+            <div class="about-stats">
+              <div class="stat-card"><span class="stat-number">Java</span><span class="stat-text">Primary Language</span></div>
+              <div class="stat-card"><span class="stat-number">Full Stack</span><span class="stat-text">Development Focus</span></div>
+              <div class="stat-card"><span class="stat-number">React</span><span class="stat-text">Frontend Development</span></div>
             </div>
+
+            <a href="#contact" class="text-link">
+              Let's work together <i class="fa-solid fa-arrow-right"></i>
+            </a>
           </div>
-
-          <div class="box">
-            <div class="topic">Bootstrap</div>
-            <div class="per">
-              <img
-                src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-original.svg"
-                width="40" />
-            </div>
-          </div>
-
-          <div class="box">
-            <div class="topic">Git</div>
-            <div class="per">
-              <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg"
-                width="40" />
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </div>
-  </section>
-  <!-- My project Section -->
-  <section class="project" id="project">
-    <div class="content">
-      <div class="title"><span>My Projects</span></div>
-      <div class="boxes">
-        <div class="box"><a href="https://github.com/devabrath/My-portfolio" target="_blank">
-            <div class="icon">
-              <img src="Images/resume.png" alt="Resume Image">
-
-            </div>
-            <div class="topic">Portfolio</div>
-            <p>This is the Portfolio website which is implemented by using HTML, CSS and Javascript.</p>
-          </a>
-        </div>
-        <div class="box"><a href="https://github.com/devabrath/Quizzer-App" target="_blank">
-            <div class="icon">
-              <img src="Images/quiz.png" alt="Quiz Image" style="background-color: transparent;">
-
-            </div>
-            <div class="topic">Quizzer App</div>
-            <p>This is the Android Application where user can attempt Quiz and it is implemented using Java and XML.
-              It consists of Basic General knowledge Questions.</p>
-          </a>
-        </div>
-        <div class="box"><a href="https://github.com/devabrath/CalculatorApp" target="_blank">
-            <div class="icon">
-              <img src="Images/calculator.png" alt="Calculator Image" style="background-color: transparent;">
-            </div>
-            <div class="topic">Calculator App</div>
-            <p>This is the Basic Application that performs mathematical calculations
-              on a device, providing functions such as addition, subtraction, multiplication, division, and more.</p>
-          </a>
-        </div>
-        <div class="box"><a href="https://github.com/devabrath" target="_blank">
-            <div class="icon">
-              <img src="Images/step counter.png" alt="Steps Image" style="background-color: transparent;">
-              <!-- <i class="fas fa-paint-brush"></i> -->
-            </div>
-            <div class="topic">Step Counter</div>
-            <p>This is the Android Application where user can count steps that he/she has been walked and it is
-              implemented using JAVA and XML.This application can run in background and display step count in
-              notification.
-            </p>
-          </a>
-        </div>
-        <div class="box"><a href="https://github.com/devabrath/BasicShoppingApp" target="_blank">
-            <div class="icon">
-              <img src="Images/onlineshopping.png" alt="Shopping Image" style="background-color: transparent;">
-            </div>
-            <div class="topic">Shopping App</div>
-            <p>This is the Android Application where user can Scroll the products and just add to the cart.
-              It soon will be linked with the firebase for autentication.
-            </p>
-          </a>
-        </div>
-        <div class="box"><a href="https://github.com/devabrath/VoiceAssistant" target="_blank">
-            <div class="icon">
-              <img src="Images/voice-assistant.png" alt="VoiceAssistant Image" class="B"
-                style="background-color: white;">
-            </div>
-            <div class="topic">Voice Assistant</div>
-            <p>Voice assistance using Python involves Assistant understanding and
-              respond to spoken commands, enabling hands-free interaction and performing tasks based on user voice
-              inputs.
-            </p>
-          </a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Contact Me -->
-  <section class="contact" id="contact">
-    <div class="content">
-      <div class="title"><span>Contact Me</span></div>
-      <div class="text">
-
-        <p style="margin-top:10px;">
-          I’m interested in freelance opportunities – especially ambitious or large projects.
-          However, if you have any other request or question, don’t hesitate to contact me.
-        </p>
-
-        <div class="media-icons">
-          <a href="https://wa.me/917036832532" target="_blank">
-            <i class="fab fa-whatsapp" style="font-size: 25px;"></i>
-          </a>
-
-          <a href="https://www.linkedin.com/in/devabrathsahu/" target="_blank"><i class="fa fa-linkedin-square"
-              style="font-size: 25px; "></i></a>
-          <a href="https://github.com/devabrath" target="_blank"><i class="fab fa-github"
-              style="font-size: 25px;"></i></a>
-
+    <!-- Skills -->
+    <section class="skills section" id="skills">
+      <div class="content">
+        <div class="section-heading reveal">
+          <p class="section-label">TECH STACK</p>
+          <h2>Technologies I use to <span>build things.</span></h2>
         </div>
-        <div class="button">
-          <a href="mailto:devabrathsahu7032@gmail.com?subject=Let's Connect for the Job&body=Hi%20Devabrath,">
-            <button>Let's Chat</button>
-          </a>
+
+        <div class="skills-grid">
+          <div class="skill-card reveal-zoom">
+            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="Java">
+            <h3>Java</h3>
+          </div>
+
+          <div class="skill-card reveal-zoom">
+            <i class="fa-solid fa-leaf skill-icon spring-icon"></i>
+            <h3>Spring Boot</h3>
+          </div>
+
+          <div class="skill-card reveal-zoom">
+            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" alt="React">
+            <h3>React</h3>
+          </div>
+
+          <div class="skill-card reveal-zoom">
+            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript">
+            <h3>JavaScript</h3>
+          </div>
+
+          <div class="skill-card reveal-zoom">
+            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="TypeScript">
+            <h3>TypeScript</h3>
+          </div>
+
+          <div class="skill-card reveal-zoom">
+            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" alt="HTML">
+            <h3>HTML5</h3>
+          </div>
+
+          <div class="skill-card reveal-zoom">
+            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" alt="CSS">
+            <h3>CSS3</h3>
+          </div>
+
+          <div class="skill-card reveal-zoom">
+            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg" alt="MySQL">
+            <h3>MySQL</h3>
+          </div>
+
+          <div class="skill-card reveal-zoom">
+            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" alt="Git">
+            <h3>Git</h3>
+          </div>
+
+          <div class="skill-card reveal-zoom">
+            <i class="fa-solid fa-wand-magic-sparkles skill-icon"></i>
+            <h3>Gen AI</h3>
+            <p>AI Applications</p>
+          </div>
         </div>
       </div>
-  </section>
+    </section>
 
-  <!-- Footer  -->
+    <!-- Projects -->
+    <section class="project section" id="project">
+      <div class="content">
+        <div class="projects-header">
+          <div class="section-heading reveal">
+            <p class="section-label">PROJECTS</p>
+            <h2>Things I've <span>built.</span></h2>
+          </div>
+
+          <a href="https://github.com/devabrath" target="_blank" rel="noopener noreferrer" class="github-link reveal">
+            View GitHub <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+
+        <div class="project-grid">
+
+          <article class="project-card reveal">
+            <div class="project-image">
+              <img src="Images/onlineshopping.png" alt="Shopping App">
+              <div class="project-overlay"></div>
+              <a href="https://github.com/devabrath/BasicShoppingApp" target="_blank" rel="noopener noreferrer" aria-label="View Shopping App source code">
+                <i class="fa-brands fa-github"></i>
+              </a>
+            </div>
+            <div class="project-info">
+              <h3>Dunique <span>(E-Commerce Shopping App)</span></h3>
+              <p>A full-stack e-commerce platform with customer, vendor, and admin dashboards for managing products, orders, users, and business operations, including revenue tracking and management.</p>
+              <div class="project-tags"><span>Java</span><span>Spring Boot</span><span>React</span><span>MySQL</span></div>
+            </div>
+          </article>
+          
+          <article class="project-card reveal">
+            <div class="project-image">
+              <img src="Images/onlineshopping.png" alt="Shopping App">
+              <div class="project-overlay"></div>
+              <a href="https://github.com/devabrath/BasicShoppingApp" target="_blank" rel="noopener noreferrer" aria-label="View Shopping App source code">
+                <i class="fa-brands fa-github"></i>
+              </a>
+            </div>
+            <div class="project-info">
+              <h3>URLShort (Advanced URL Shortener)</h3>
+              <p>A URL shortening application that creates and manages short links with efficient redirection and link management functionality.</p>
+              <div class="project-tags"><span>Java</span><span>Spring Boot</span><span>React</span><span>MySQL</span></div>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-image">
+              <img src="Images/onlineshopping.png" alt="Shopping App">
+              <div class="project-overlay"></div>
+              <a href="https://github.com/devabrath/BasicShoppingApp" target="_blank" rel="noopener noreferrer" aria-label="View Shopping App source code">
+                <i class="fa-brands fa-github"></i>
+              </a>
+            </div>
+            <div class="project-info">
+              <h3>NurtiScan</h3>
+              <p>A barcode scanner application that scans products and displays their nutritional information, helping users quickly understand the nutritional values of packaged food products.</p>
+              <div class="project-tags"><span>Java</span><span>Android</span><span>Barcode Scanner</span></div>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-image">
+              <img src="Images/resume.png" alt="Portfolio project">
+              <div class="project-overlay"></div>
+              <a href="https://github.com/devabrath/My-portfolio" target="_blank" rel="noopener noreferrer" aria-label="View Portfolio source code">
+                <i class="fa-brands fa-github"></i>
+              </a>
+            </div>
+            <div class="project-info">
+              <h3>Developer Portfolio</h3>
+              <p>A responsive personal portfolio website built to showcase projects, skills, experience, and professional information.</p>
+              <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-image">
+              <img src="Images/quiz.png" alt="Quizzer App">
+              <div class="project-overlay"></div>
+              <a href="https://github.com/devabrath/Quizzer-App" target="_blank" rel="noopener noreferrer" aria-label="View Quizzer App source code">
+                <i class="fa-brands fa-github"></i>
+              </a>
+            </div>
+            <div class="project-info">
+              <h3>Quizzer App</h3>
+              <p>An Android quiz application where users can answer general knowledge questions and interact with a simple quiz system.</p>
+              <div class="project-tags"><span>Java</span><span>Android</span><span>XML</span></div>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-image">
+              <img src="Images/voice-assistant.png" alt="Voice Assistant">
+              <div class="project-overlay"></div>
+              <a href="https://github.com/devabrath/VoiceAssistant" target="_blank" rel="noopener noreferrer" aria-label="View Voice Assistant source code">
+                <i class="fa-brands fa-github"></i>
+              </a>
+            </div>
+            <div class="project-info">
+              <h3>Voice Assistant</h3>
+              <p>A Python-based voice assistant capable of understanding spoken commands and performing tasks through voice interaction.</p>
+              <div class="project-tags"><span>Python</span><span>Speech</span><span>Automation</span></div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact section" id="contact">
+      <div class="content">
+        <div class="contact-wrapper reveal">
+          <p class="section-label">GET IN TOUCH</p>
+          <h2>Let's build something <span>great together.</span></h2>
+
+          <p class="contact-description">
+            I'm always interested in discussing new opportunities, software projects, and ideas. Feel free to reach out.
+          </p>
+
+          <a href="mailto:devabrathsahu7032@gmail.com?subject=Let's%20Connect" class="contact-email">
+            devabrathsahu7032@gmail.com <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+
+          <div class="contact-socials">
+            <a href="https://wa.me/917036832532" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/devabrathsahu/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/devabrath" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
   <footer>
-    <div class="text">
-    </div>
+    <p>Designed & Built by <span>Devabrath Sahu</span></p>
+    <p class="copyright">© <span id="year"></span> All rights reserved.</p>
   </footer>
 
   <script src="script.js"></script>
 </body>
-
 </html>
