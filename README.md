@@ -7,7 +7,7 @@ A personal portfolio website showcasing my profile, projects, technical skills, 
 ## 🚀 Live Website
 
 Visit my portfolio:  
-https://devabrath.github.io/developerFolio/
+[https://devabrath.github.io/developerFolio/](https://devabrath.github.io/DeveloperFolio/)
 
 ## ✨ Features
 
