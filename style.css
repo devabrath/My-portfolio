@@ -399,7 +399,7 @@ nav.sticky {
   gap: 16px;
 }
 .skill-card {
-  min-height: 190px;
+  min-height: 110px;
   padding: 28px 22px;
   background: var(--surface-solid);
   border: 1px solid var(--border);
@@ -443,66 +443,85 @@ nav.sticky {
   grid-template-columns: repeat(3,1fr);
   gap: 22px;
 }
+
 .project-card {
+  position: relative;
   overflow: hidden;
+  padding: 28px;
   background: var(--surface-solid);
   border: 1px solid var(--border);
   border-radius: 20px;
   box-shadow: var(--shadow);
   transition: transform .35s ease, box-shadow .35s ease;
 }
-.project-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-hover); }
-.project-image {
-  position: relative;
-  height: 200px;
-  overflow: hidden;
-  background: var(--bg-secondary);
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-hover);
 }
-.project-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  padding: 25px;
-  transition: transform .4s ease;
+
+.project-number {
+  display: block;
+  margin-bottom: 18px;
+  color: var(--primary);
+  font-family: var(--code-font);
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .12em;
 }
-.project-card:hover .project-image img { transform: scale(1.08); }
-.project-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg,rgba(124,58,237,.85),rgba(6,182,212,.8));
-  opacity: 0;
-  transition: opacity .3s ease;
+
+.project-info { padding: 0; }
+
+.project-info h3 {
+  margin: 0 0 12px;
+  font-size: 1.25rem;
 }
-.project-image a {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%) scale(.7);
-  width: 50px;
-  height: 50px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  background: #fff;
-  color: #111827;
-  opacity: 0;
-  transition: opacity .3s ease, transform .3s ease;
+
+.project-info h3 span {
+  display: block;
+  margin-top: 4px;
+  color: var(--text-secondary);
+  font-size: .8rem;
+  font-weight: 500;
 }
-.project-card:hover .project-overlay,.project-card:hover .project-image a { opacity: 1; }
-.project-card:hover .project-image a { transform: translate(-50%,-50%) scale(1); }
-.project-info { padding: 24px; }
-.project-info h3 { font-size: 1.25rem; margin: 10px 0 12px; }
+
 .project-info p {
+  margin: 0;
   color: var(--text-secondary);
   font-size: .9rem;
   line-height: 1.7;
 }
+
+.project-features {
+  margin-top: 20px;
+}
+
+.project-features strong {
+  display: block;
+  margin-bottom: 10px;
+  font-size: .8rem;
+  color: var(--text-primary);
+}
+
+.project-features ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--text-secondary);
+  font-size: .82rem;
+  line-height: 1.8;
+}
+
+.project-features li::marker {
+  color: var(--primary);
+}
+
 .project-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 7px;
-  margin-top: 20px;
+  margin-top: 22px;
 }
+
 .project-tags span {
   padding: 5px 9px;
   border-radius: 6px;
@@ -512,6 +531,20 @@ nav.sticky {
   font-size: .65rem;
 }
 
+.project-link {
+  display: inline-block;
+  margin-top: 22px;
+  color: var(--primary);
+  font-family: var(--code-font);
+  font-size: .75rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform .25s ease;
+}
+
+.project-link:hover {
+  transform: translateX(5px);
+}
 /* Contact */
 .contact { background: var(--bg-secondary); }
 .contact-wrapper {
