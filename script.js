@@ -107,3 +107,26 @@ window.addEventListener("resize", () => {
 });
 
 handleScroll();
+
+/* Resume Download Tracking */
+
+const SUPABASE_URL =
+  "https://notftzgptyduvsqxzsgq.supabase.co";
+const SUPABASE_KEY =
+  "sb_publishable_FTeLTKGF0Q3M8XDEuyoB1w_qONkrXRH";
+const resumeDownload = document.getElementById("resumeDownload");
+if (resumeDownload) {
+  resumeDownload.addEventListener("click", () => {
+    fetch(`${SUPABASE_URL}/rest/v1/resume_downloads`, {
+      method: "POST",
+      headers: {
+        "apikey": SUPABASE_KEY,
+        "Authorization": `Bearer ${SUPABASE_KEY}`,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({})
+    }).catch(error => {
+      console.error("Resume tracking failed:", error);
+    });
+  });
+}
